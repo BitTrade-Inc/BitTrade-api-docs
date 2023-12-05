@@ -11,4 +11,5 @@
 
 
 _記載情報関するお問い合わせに関しては以下のURLよりお問合せください。_
+
 [https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193](https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193)

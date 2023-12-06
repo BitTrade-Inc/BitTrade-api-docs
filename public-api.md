@@ -12,6 +12,9 @@ Public API
 ```txt
 GET /market/detail/merged
 ```
+```txt
+curl -X GET "https://api-cloud.bittrade.co.jp/market/detail/merged?symbol=ethjpy"
+```
 
 **Parameters:**
 
@@ -69,6 +72,9 @@ ask | 現在の最低買値
 
 ```txt
 GET /market/trade
+```
+```txt
+curl -X GET "https://api-cloud.bittrade.co.jp/market/trade?symbol=ethjpy"
 ```
 
 **Parameters:**
@@ -186,4 +192,11 @@ GET /market/tickers
             "ask": 6488452,
             "askSize": 0.04
         },
+```
+
+#ローソク足
+ローソク足のデータを取得
+
+```txt
+GET /market/history/kline?period=1day&size=2&symbol=btcjpy"
 ```

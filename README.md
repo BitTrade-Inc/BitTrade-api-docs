@@ -12,6 +12,6 @@
 [errors.md](./errors.md) | 取引関連のエラーコードが確認できます。
 
 
-_記載情報関するお問い合わせに関しては以下のURLよりお問合せください。_
+_記載の情報に関するお問合せに関しては以下のリンクよりお問合せください。_
 
 [https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193](https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193)

@@ -13,7 +13,7 @@ Public API
 GET /market/detail/merged
 ```
 ```txt
-curl -X GET "https://api-cloud.bittrade.co.jp/market/detail/merged?symbol=ethjpy"
+curl -X GET "https://api-cloud.bittrade.co.jp/market/detail/merged?symbol=btcjpy"
 ```
 
 **Parameters:**
@@ -74,7 +74,7 @@ ask | 現在の最低買値
 GET /market/trade
 ```
 ```txt
-curl -X GET "https://api-cloud.bittrade.co.jp/market/trade?symbol=ethjpy"
+curl -X GET "https://api-cloud.bittrade.co.jp/market/trade?symbol=btcjpy"
 ```
 
 **Parameters:**
@@ -129,6 +129,9 @@ ask | 現在の最低買値
 ```txt
 GET /market/depth
 ```
+```txt
+curl -X GET "https://api-cloud.bittrade.co.jp/market/depth?symbol=btcjpy&type=step1"
+```
 
 **Parameters:**
 
@@ -176,6 +179,9 @@ bids | 買い注文の情報
 
 ```txt
 GET /market/tickers
+```
+```txt
+curl -X GET "https://api-cloud.bittrade.co.jp/market/tickers"
 ```
 ```
   {

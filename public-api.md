@@ -14,6 +14,7 @@ GET /market/detail/merged
 ```
 
 **Parameters:**
+
 Parameter | Required | Description
------------- | ------------ | ------------ | ------------
+------------ | ------------ | ------------
 symbol | true | 取引ペア: [ペア一覧](pairs.md)

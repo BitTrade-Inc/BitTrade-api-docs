@@ -204,5 +204,8 @@ curl -X GET "https://api-cloud.bittrade.co.jp/market/tickers"
 ローソク足のデータを取得
 
 ```txt
+GET /market/history/kline
+```
+```txt
 GET /market/history/kline?period=1day&size=2&symbol=btcjpy"
 ```

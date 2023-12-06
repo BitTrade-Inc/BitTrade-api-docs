@@ -49,7 +49,7 @@ symbol | true | 取引ペア: [ペア一覧](pairs.md)
 **Response:**
 
 Parameter | Description
------------- | ------------ | ------------
+------------ | ------------
 status |リクエスト処理結果
 ts | 現在の時刻
 open | 24時間前の始値

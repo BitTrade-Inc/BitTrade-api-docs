@@ -4,5 +4,16 @@ Public API
 
 
 #ティッカー
+
 各取引ペアのティッカー情報を取得することができます。
-#
+
+##HTTP REQUEST
+
+```txt
+GET /market/detail/merged
+```
+
+**Parameters:**
+Parameter | Required | Description
+------------ | ------------ | ------------ | ------------
+symbol | true | 取引ペア: [ペア一覧](pairs.md)

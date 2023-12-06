@@ -1,7 +1,7 @@
 #  BitTrade Inc.公式APIドキュメント
 
 
-* 公式なアナウンスやメンテナンスのお知らせについては、**[https://bittrade.zendesk.com/hc/ja](https://bittrade.zendesk.com/hc/ja)** を確認してください。
+* 最新の情報やメンテナンスのお知らせについては、**[https://bittrade.zendesk.com/hc/ja](https://bittrade.zendesk.com/hc/ja)** を確認してください。
 
 ドキュメント名 | 内容
 ------------ | ------------

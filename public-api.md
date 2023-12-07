@@ -213,5 +213,52 @@ curl -X GET "https://api-cloud.bittrade.co.jp/market/tickers"
 GET /market/history/kline
 ```
 ```txt
-GET /market/history/kline?period=1day&size=2&symbol=btcjpy"
+https://api-cloud.bittrade.co.jp/market/history/kline?period=1day&size=2&symbol=btcjpy
 ```
+
+**Parameters:**
+
+Parameter | Description
+------------ | ------------ | ------------
+symbol | 取引ペア: [ペア一覧](pairs.md)
+period | チャートタイプ
+size | チャートサイズ[150〜2,000]
+
+```
+{
+    "ch": "market.btcjpy.kline.1day",
+    "status": "ok",
+    "ts": 1701916672242,
+    "data": [
+        {
+            "id": 1701878400,
+            "open": 6461593,
+            "close": 6470269,
+            "low": 6433803,
+            "high": 6519367,
+            "amount": 50.64285219438104,
+            "vol": 327991371.12802655,
+            "count": 11008
+        },
+        {
+            "id": 1701792000,
+            "open": 6227123,
+            "close": 6461593,
+            "low": 6200001,
+            "high": 6556474,
+            "amount": 125.30771402526693,
+            "vol": 808691546.00449,
+            "count": 29331
+        }
+    ]
+}
+```
+
+**Response:**
+
+Field | Description
+------------ | ------------
+status | リクエスト処理結果
+ts | 現在の時刻
+tick | ローソク足データ
+

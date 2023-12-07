@@ -160,3 +160,23 @@ https://api-cloud.bittrade.co.jp/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-8
 
 ・一部のAPIは独自の制限ルールがありますので、そのAPIの詳細に参照してください。
 
+## 共通のエラーフォーマット
+--------------------------------------------
+
+Field | Description
+------------ | ------------
+ts | 現在時刻
+status | ステータス[error]
+errorCode | エラーコード
+errorMsg | エラーメッセージ
+
+**エラー時のレスポンス**
+
+```
+{
+  "ts": 1632970571737,
+  "status": "error",
+  "err-code": "invalid-parameter",
+  "err-msg": "invalid symbol"
+}
+```

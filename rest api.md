@@ -91,3 +91,72 @@ Signature | 署名に基づいて計算された値。署名が有効で改ざ�
 ## 署名処理
 --------------------------------------------------
 **署名処理手順**
+
+1.リクエスト方法（GET 或いは POST）、続けて改行を追加する
+
+2.小文字のアクセスアドレスに続けて改行を追加する
+
+3.アクセスメソッドへのパス、続けて改行を追加する
+
+4.パラメータ名は、ASCIIコードの順にソートし、URLエンコーディングしてください。
+
+5.上記の順序で、各パラメーターは文字 '＆'を使用して連結します。
+
+6.署名元の文字列は以下の通りに示されます。
+
+7.セキュリティキーと変換後のリクエスト文字列を使って、署名処理を行い、その結果はBase64エンコードします。
+上記の値をパラメータSignatureの値としてAPIリクエストに追加します。
+
+8.最終的に、サーバーに送信するAPIリクエストは次のようになります。
+
+```
+# 元のリクエスト
+https://api-cloud.bittrade.co.jp/v1/order/orders?
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
+&order-id=1234567890
+&SignatureMethod=HmacSHA256
+&SignatureVersion=2
+&Timestamp=2017-05-11T15:19:30
+
+# 1. 改行入れる
+GET\n
+
+# 2. 改行入れる
+api-cloud.bittrade.co.jp\n
+
+# 3. 改行入れる
+/v1/order/orders\n
+
+# 4. パラメータソートする
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
+SignatureMethod=HmacSHA256
+SignatureVersion=2
+Timestamp=2017-05-11T15%3A19%3A30
+order-id=1234567890
+
+# 5. '&'で連結
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890
+
+# 6. 署名用文字列
+GET\n
+api-cloud.bittrade.co.jp\n
+/v1/order/orders\n
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890
+
+# 7. 署名処理 - サンプルコードに参照
+SecretKey: b0xxxxxx-c6xxxxxx-94xxxxxx-dxxxx
+Signature: 4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=
+
+# 8. 署名後の文字列をURLに付加する
+https://api-cloud.bittrade.co.jp/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D
+```
+
+## 制限
+----------------------------------------------
+
+・公開APIの場合、IP毎に1秒以内に10回に制限されます。
+
+・署名が必要なAPIについて、APIキー毎に1秒以内に10回に制限されています。
+
+・一部のAPIは独自の制限ルールがありますので、そのAPIの詳細に参照してください。
+

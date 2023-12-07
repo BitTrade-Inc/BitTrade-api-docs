@@ -13,6 +13,14 @@
 ・ws[https://github.com/websockets/ws]のWebSocketライブラリになります。
 
 
-## トピック一覧
+## ローソク足
 --------------------------------------
+**トピック:**
+```
+market.$symbol.kline.$period
+```
 
+key | Description
+------------ | ------------
+symbol | 取引ペア
+period | チャートタイプ

@@ -54,5 +54,40 @@ authority | Description
 
 セキュリティ上の理由で、公開API以外のリクエストには全て署名が必要となります。これから署名に関する手順を説明します
 
-*HOST*
 **HOST**
+
+URL: https://api-cloud.bittrade.co.jp
+
+**共通仕様**
+
+Header | Description
+------------ | ------------
+UserAgent | User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36
+Language | Accept-Language: ja-JP
+POST Request | Content-Type: application/json
+GET Request | Content-Type: application/x-www-form-urlencoded
+Response Format | json
+
+**認証用共通パラメータ**
+
+Parameter | Description
+------------ | ------------
+AccessKeyId | アクセスキー
+SignatureMethod | 署名の演算時に用いるハッシュベースプロトコル、ここではHmacSHA256を指定します
+SignatureVersion | 署名プロトコルのバージョン、ここでは2を指定します
+Timestamp | リクエスト時のUnix Timestamp(UTC 時間) 。
+Signature | 署名に基づいて計算された値。署名が有効で改ざんされていないことを保証するために使用されます。
+
+※POSTリクエストに対して、下記のパラメータのみ署名する必要があります。そのほかのパラメータはRequest Bodyに入れてください
+
+・AccessKeyId
+
+・SignatureMethod
+
+・SignatureVersion
+
+・Timestamp
+
+## 署名処理
+--------------------------------------------------
+**署名処理手順**

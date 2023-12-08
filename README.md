@@ -13,6 +13,7 @@
 [wallet.md](./wallet.md) | ウォレット関連情報を確認できます。
 [otc Market.md](.otc-market.md) | 販売所関連情報を確認できます。
 [websocket.md](./websocket.md) | Webscket方式の情報を確認できます。
+[errors.md](./errors.md) | エラーコードの内容を確認できます。
 
 
 _記載の情報に関するお問合せに関しては以下のリンクよりお問合せください。_

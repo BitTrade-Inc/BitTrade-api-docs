@@ -11,7 +11,7 @@
 [account.md](./account.md) | アカウント情報関連を確認できます。
 [trade.md](./trade.md) | 取引関連情報を確認できます。
 [wallet.md](./wallet.md) | ウォレット関連情報を確認できます。
-[OTC Market.md](./assets.md) | 販売所関連情報を確認できます。
+[otc Market.md](.otc-market.md) | 販売所関連情報を確認できます。
 [websocket.md](./websocket.md) | Webscket方式の情報を確認できます。
 
 

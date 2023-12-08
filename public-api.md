@@ -8,7 +8,7 @@
 
 各取引ペアのティッカー情報を取得することができます。
 
-##HTTP REQUEST
+**HTTP REQUEST**
 
 ```txt
 GET /market/detail/merged

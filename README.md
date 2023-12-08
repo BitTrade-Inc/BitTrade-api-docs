@@ -5,11 +5,14 @@
 
 ドキュメント名 | 内容
 ------------ | ------------
-[public-api.md](./public-api.md) | 公開されている市場データを確認できます。口座情報や取引の発注・キャンセルなどを確認できます。
-[private-api.md](./private-api_JP.md) | 口座情報や取引の発注・キャンセルなどを確認できます。
-[webscket-api.md](./websocket.md) | Webscket方式のAPI情報を参照できます。
-[assets.md](./assets.md) | 取り扱い銘柄とそのティッカーを確認できます。
-[errors.md](./errors.md) | 取引関連のエラーコードが確認できます。
+[rest api.md](./rest-api.md) | RestAPIの共通情報を確認できます。
+[system.md](./system.md) | システム情報関連を確認できます。
+[market.md](./market.md) | マーケット情報関連を確認できます。
+[account.md](./account.md) | アカウント情報関連を確認できます。
+[trade.md](./trade.md) | 取引関連情報を確認できます。
+[wallet.md](./wallet.md) | ウォレット関連情報を確認できます。
+[OTC Market(Hanbaijo).md](./assets.md) | 販売所関連情報を確認できます。
+[websocket.md](./websocket.md) | Webscket方式の情報を確認できます。
 
 
 _記載の情報に関するお問合せに関しては以下のリンクよりお問合せください。_

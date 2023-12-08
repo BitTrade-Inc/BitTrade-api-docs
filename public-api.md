@@ -17,7 +17,7 @@ GET /market/detail/merged
 curl -X GET "https://api-cloud.bittrade.co.jp/market/detail/merged?symbol=btcjpy"
 ```
 
-**Parameters:**
+**Parameters**
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
@@ -50,7 +50,7 @@ symbol | true | 取引ペア: [ペア一覧](pairs.md)
 }
 ```
 
-**Response:**
+**Response**
 
 Parameter | Description
 ------------ | ------------
@@ -70,7 +70,7 @@ ask | 現在の最低買値
 
 最新の取引履歴を取得できます。
 
-##HTTP REQUEST
+**HTTP REQUEST**
 
 ```txt
 GET /market/trade
@@ -79,7 +79,7 @@ GET /market/trade
 curl -X GET "https://api-cloud.bittrade.co.jp/market/trade?symbol=btcjpy"
 ```
 
-**Parameters:**
+**Parameters**
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
@@ -107,7 +107,7 @@ symbol | true | 取引ペア: [ペア一覧](pairs.md)
 }
 ```
 
-**Response:**
+**Response**
 
 Parameter | Description
 ------------ | ------------
@@ -127,7 +127,7 @@ ask | 現在の最低買値
 
 板情報を取得できます。
 
-##HTTP REQUEST
+**HTTP REQUEST**
 
 ```txt
 GET /market/depth
@@ -136,7 +136,7 @@ GET /market/depth
 curl -X GET "https://api-cloud.bittrade.co.jp/market/depth?symbol=btcjpy&type=step1"
 ```
 
-**Parameters:**
+**Parameters**
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
@@ -169,7 +169,7 @@ Type | true | グルーピングレベル[step0〜step5]
             ],
 ```
 
-**Response:**
+**Response**
 
 Parameter | Description
 ------------ | ------------
@@ -216,11 +216,11 @@ GET /market/history/kline
 https://api-cloud.bittrade.co.jp/market/history/kline?period=1day&size=2&symbol=btcjpy
 ```
 
-**Parameters:**
+**Parameters**
 
 Parameter | Description
 ------------ | ------------ | ------------
-symbol | 取引ペア: [ペア一覧](pairs.md)
+symbol | 取引ペア: [ペア一覧](assets.md)
 period | チャートタイプ
 size | チャートサイズ[150〜2,000]
 
@@ -254,7 +254,7 @@ size | チャートサイズ[150〜2,000]
 }
 ```
 
-**Response:**
+**Response**
 
 Field | Description
 ------------ | ------------

@@ -84,4 +84,5 @@ Field | Description
 ------------ | ------------
 balance | 残高
 currency | 暗号資産
-type | trade：取引残高/frozen：凍結残高
+type | trade：取引残高
+frozen：凍結残高

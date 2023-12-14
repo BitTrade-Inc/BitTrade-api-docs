@@ -175,5 +175,5 @@ curl -X GET \
 Parameter | Description
 ------------ | ------------
 status | リクエスト処理結果[ok/error]
-data | システムのUNIX Timestamp(ミリ秒)
+data | 現在時刻
 

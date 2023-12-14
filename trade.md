@@ -581,4 +581,6 @@ price | 注文価格
 source | 注文方法[default/api]
 state | 注文ステータス
 symbol | 通貨ペア
+
+
 type | 注文タイプ

@@ -715,3 +715,5 @@ accountType | アカウントタイプ[trade, loan, interest]
 changeTime | 変更時間
 seqNum | アカウント変更のシリアル番号
 
+
+

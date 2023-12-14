@@ -20,4 +20,3 @@
 _記載の情報に関するお問合せに関しては以下のリンクよりお問合せください。_
 
 [https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193](https://bittrade.zendesk.com/hc/ja/requests/new?ticket_form_id=360000388193)
-

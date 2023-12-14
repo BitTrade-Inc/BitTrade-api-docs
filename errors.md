@@ -48,3 +48,4 @@ order-update-error | 注文更新失敗
 2003 | query.account.list.error | アカウントリストのクエリに失敗
 4000 | too.many.request | クライアントアップリンク要求の頻度制限
 4000 | too.many.connection | 接続上限超過
+あ

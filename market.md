@@ -359,5 +359,3 @@ trade-id | 取引ID
 amount | 取引量
 price | 価格
 direction | 取引方向[by/sell]
-
-

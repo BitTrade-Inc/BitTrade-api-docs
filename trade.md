@@ -68,7 +68,7 @@ Parameter | Description
 account-id | アカウントID
 amount | 取引数量
 price | 指値の注文価格
-sauce | 注文方法[default/api]
+sauce | 注文方法
 symbol | 通貨ペア
 type | 注文タイプ
 
@@ -365,7 +365,7 @@ finished-at | 約定完了時間
 id | 	注文ID
 client-order-id | ユーザ設定の注文ID
 price | 注文価格
-source | 注文方法[default/api]
+source | 注文方法
 state | 注文ステータス
 symbol | 通貨ペア
 type | 注文タイプ
@@ -434,7 +434,7 @@ field-fees | 約定手数料
 finished-at | 約定時間
 id | 	注文ID
 price | 注文価格
-source | 注文方法[default/api]
+source | 注文方法
 state | 注文ステータス
 symbol | 通貨ペア
 type | 注文タイプ
@@ -578,7 +578,7 @@ field-fees | 約定手数料
 finished-at | 約定時間
 id | 	注文ID
 price | 注文価格
-source | 注文方法[default/api]
+source | 注文方法
 state | 注文ステータス
 symbol | 通貨ペア
 

@@ -107,10 +107,10 @@ curl -X POST \
 **Query Parameters**
 Parameter | Description
 ------------ | ------------ 
-withdraw-id | 出金ID
+withdraw-id | 出金記録ID
 
 
 **Response Data**
 Parameter | Description
 ------------ | ------------ 
-data | 出金ID
+data | 出金記録ID

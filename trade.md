@@ -426,7 +426,7 @@ Parameter | Description
 ------------ | ------------ 
 account-id | アカウント ID
 amount | 注文数量
-canceled-at | キャンセル時間
+canceled-at | キャンセル受付委時間
 created-at | 注文作成時間
 field-amount | 約定数量
 field-cash-amount | 約定総額

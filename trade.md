@@ -20,7 +20,7 @@ sell-limit-maker | Post only(売り)
 Status | Description
 ------------ | ------------ 
 created | 注文作成 
-submitted  発注
+submitted | 発注
 partial-filled | 部分約定
 partial-canceled | 部分キャンセル
 filled | 全部約定

@@ -158,7 +158,7 @@ Parameter | Description
 ------------ | ------------
 status | リクエスト処理結果[ok/error]
 ts | 現在時刻
-data |　取引相場のリスト
+data | 取引相場のリスト
 
 
 ## 板情報

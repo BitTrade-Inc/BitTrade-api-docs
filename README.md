@@ -12,7 +12,7 @@
 [trade.md](./trade.md) | 取引関連情報を確認できます。
 [wallet.md](./wallet.md) | ウォレット関連情報を確認できます。
 [otc-market.md](.otc-market.md) | 販売所関連情報を確認できます。
-[websocket-api.md](./websocket-api.md) | Webscket方式の情報を確認できます。
+[websocket-api.md](./websocket-api.md) | Websocket方式の情報を確認できます。
 [assets.md](./assets.md) | BitTradeAPIで取り扱っている通貨を確認できます。
 [errors.md](./errors.md) | エラーコードの内容を確認できます。
 

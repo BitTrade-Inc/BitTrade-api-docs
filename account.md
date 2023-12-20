@@ -37,7 +37,7 @@ Parameter | Description
 id | アカウントID
 type | アカウントタイプ
 state | アカウントステータス
-user-id | 	ユーザID
+user-id | ユーザID
 
 
 ## 残高照会
@@ -77,7 +77,7 @@ Parameter | Description
 id | アカウントID
 type | アカウントタイプ
 state | アカウントステータス
-list | 	残高情報
+list | 残高情報
 
 **List Data**
 Field | Description

@@ -22,7 +22,7 @@ curl -X GET "https://api-cloud.bittrade.co.jp/market/detail/merged?symbol=btcjpy
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
-symbol | true | 取引ペア: [ペア一覧](pairs.md)
+symbol | true | 取引ペア: [ペア一覧](assets.md)
 
 ```
 {
@@ -85,7 +85,7 @@ curl -X GET "https://api-cloud.bittrade.co.jp/market/trade?symbol=btcjpy"
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
-symbol | true | 取引ペア: [ペア一覧](pairs.md)
+symbol | true | 取引ペア: [ペア一覧](assets.md)
 
 ```
 {
@@ -113,7 +113,7 @@ symbol | true | 取引ペア: [ペア一覧](pairs.md)
 
 Parameter | Description
 ------------ | ------------
-status |リクエスト処理結果
+status | リクエスト処理結果
 ts | 現在の時刻
 open | 24時間前の始値
 close | 最新取引価格

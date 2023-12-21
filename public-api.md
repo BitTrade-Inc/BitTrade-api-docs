@@ -225,7 +225,7 @@ https://api-cloud.bittrade.co.jp/market/history/kline?period=1day&size=2&symbol=
 **Parameters**
 
 Parameter | Description
------------- | ------------ | ------------
+------------ | ------------
 symbol | 取引ペア: [ペア一覧](assets.md)
 period | チャートタイプ
 size | チャートサイズ[150〜2,000]

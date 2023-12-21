@@ -2,7 +2,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-  - [認証](#%E8%AA%8D%E8%A8%BC)
+  - [署名処理](#%E8%AA%8D%E8%A8%BC)
   - [エンドポイント一覧](#%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E4%B8%80%E8%A6%A7)
     - [アセット](#%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88)
       - [アセット一覧を返す](#%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E4%B8%80%E8%A6%A7%E3%82%92%E8%BF%94%E3%81%99)
@@ -25,21 +25,63 @@
 # Private API
 
 
-## 認証
+## 署名処理
 
-- プライベートAPIでは以下の情報をHTTPリクエストヘッダーに付与してリクエストを行う必要があります。
-  - ACCESS-KEY : APIキーページで取得したAPIキー。
-  - ACCESS-NONCE : 整数値。リクエスト毎に数を増加させる必要があります。通常はUNIXタイムスタンプを使用してください。
-  - ACCESS-SIGNATURE : 以下に記述する署名を指定します。
+-  HMACを使うため、標準化しないと署名の結果が変わります
+  - リクエスト方法（GET 或いは POST）、続けて改行を追加する
+  - 小文字のアクセスアドレスに続けて改行を追加する
+  - アクセスメソッドへのパス、続けて改行を追加する
+  - パラメータ名は、ASCIIコードの順にソートし、URLエンコーディングしてください。
+  - 上記の順序で、各パラメーターは文字 '＆'を使用して連結します。
+  - 署名元の文字列は右の通りに示されます。
+  - 秘密キー(SecretKey)と変換後のリクエスト文字列を使って、署名処理を行い、その結果はBase64エンコードします。
+上記の値をパラメータSignatureの値としてAPIリクエストに追加します。 URIエンコードされている必要があります
+  - 最終的に、サーバーに送信するAPIリクエストは次のようになります
+    
 
-- 署名作成は、以下の文字列を `HMAC-SHA256` 形式でAPIシークレットキーを使って署名した結果となります。
-  - GETの場合: 「ACCESS-NONCE、リクエストのパス、クエリパラメータ」 を連結させたもの
-  - POSTの場合: 「ACCESS-NONCE、リクエストボディのJson文字列」 を連結させたもの
+*※ Postのリクエストにおいて、上記の署名用のパラメータ以外のデータを渡したい場合、Json形式でRequestBodyに入れて送ってください。*
 
-*※ GETのACCESS-SIGNATUREで使用する「リクエストのパス」には"/v1"も含める必要があります。*
+```
+# 元のリクエスト
+https://api-cloud.bittrade.co.jp/v1/order/orders?
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
+&order-id=1234567890
+&SignatureMethod=HmacSHA256
+&SignatureVersion=2
+&Timestamp=2017-05-11T15:19:30
 
-*※ POSTではパラメータをJson文字列にしてリクエストボディに含める必要があります。*
+# 1. 改行入れる
+GET\n
 
+# 2. 改行入れる
+api-cloud.bittrade.co.jp\n
+
+# 3. 改行入れる
+/v1/order/orders\n
+
+# 4. パラメータソートする
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
+SignatureMethod=HmacSHA256
+SignatureVersion=2
+Timestamp=2017-05-11T15%3A19%3A30
+order-id=1234567890
+
+# 5. '&'で連結
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890
+
+# 6. 署名用文字列
+GET\n
+api-cloud.bittrade.co.jp\n
+/v1/order/orders\n
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890
+
+# 7. 署名処理 - サンプルコードに参照
+SecretKey: b0xxxxxx-c6xxxxxx-94xxxxxx-dxxxx
+Signature: 4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=
+
+# 8. 署名後の文字列をURLに付加する
+https://api-cloud.bittrade.co.jp/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D
+```
 
 ## エンドポイント一覧
 

@@ -2,10 +2,6 @@
 #  BitTrade Inc.公式APIドキュメント
 
 
-* 最新の情報やメンテナンスのお知らせについては、**[https://bittrade.zendesk.com/hc/ja](https://bittrade.zendesk.com/hc/ja)** を確認してください。
-
-
-
 ## 共通情報
 
 **BitTrade APIの共通情報です。**

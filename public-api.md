@@ -143,7 +143,7 @@ curl -X GET "https://api-cloud.bittrade.co.jp/market/depth?symbol=btcjpy&type=st
 
 Parameter | Required | Description
 ------------ | ------------ | ------------
-symbol | true | 取引ペア: [ペア一覧](pairs.md)
+symbol | true | 取引ペア: [ペア一覧](assets.md)
 Type | true | グルーピングレベル[step0〜step5]
 
 

@@ -3,7 +3,6 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
  - [システム情報関連](#%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E4%B8%80%E8%A6%A7)
     - [取引ペア情報](#ticker)
@@ -64,6 +63,7 @@ sell-market-max-order-amt | 成行最大注文量(sell)
 buy-market-max-order-value | 成行最大金額
 min-order-value | 最小注文金額
 api-trading | api取引可否
+
 
 
 

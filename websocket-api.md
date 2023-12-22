@@ -38,7 +38,7 @@ period | チャートタイプ
 {
   "id": "id1",
   "status": "ok",
-  "subbed": "market.etcjpy.kline.1min",
+  "subbed": "market.btcjpy.kline.1min",
   "ts": 1489474081631
 }
 ```
@@ -58,7 +58,7 @@ period | チャートタイプ
 
 ```json
 {
-  "ch": "market.ethbtc.kline.1min",
+  "ch": "market.btcjpy.kline.1min",
   "ts": 1489474082831,
   "tick": {
     "id": 1489464480,
@@ -85,7 +85,7 @@ market.$symbol.depth.$type
 
 ```sh
 {
-  "sub": "market.ethbtc.depth.step0",
+  "sub": "market.btcjpy.depth.step0",
   "id": "id1"
 }
 ```
@@ -345,6 +345,7 @@ signatureVersion | HmacSHA256 | 暗号化メゾット
 ※JSONのURLのエンコーディングが不要
 
 **署名用リクエスト**
+
 ```sh
 {
     "action": "req", 
@@ -568,7 +569,7 @@ mode | プッシュモード[0-成約時のみ通知/1-成約時とキャンセ�
 {
     "action": "sub",
     "code": 200,
-    "ch": "trade.clearing#trxjpy#1",
+    "ch": "trade.clearing#btcjpy#1",
     "data": {}
 }
 ````
@@ -582,23 +583,23 @@ mode | プッシュモード[0-成約時のみ通知/1-成約時とキャンセ�
           "accountId": 5566913,
           "aggressor": true,
           "eventType": "trade",
-          "feeCurrency": "trx",
+          "feeCurrency": "btc",
           "feeDeduct": "0",
           "feeDeductType": "",
           "orderCreateTime": 1634275849427,
           "orderId": 388370646839430,
-          "orderPrice": "11.229",
+          "orderPrice": "6000000",
           "orderSide": "buy",
           "orderSize": "1",
           "orderStatus": "filled",
           "orderType": "buy-limit",
           "source": "web",
-          "symbol": "trxjpy",
+          "symbol": "btcjpy",
           "tradeId": 2516,
-          "tradePrice": "11.229",
+          "tradePrice": "6000000",
           "tradeTime": 1634275849431,
           "tradeVolume": "1",
-          "transactFee": "0.0015"
+          "transactFee": "0"
     }
 }
 ```
@@ -702,7 +703,7 @@ mode | Description
           "balance": "0.001998038941797817",
           "changeTime": null,
           "changeType": null,
-          "currency": "bch",
+          "currency": "btc",
           "seqNum": 83
     }
 }

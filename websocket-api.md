@@ -21,7 +21,7 @@ market.$symbol.kline.$period
 ```
 
 **購読**
-```txt
+```sh
 {
   "sub": "market.btcjpy.kline.1min",
   "id": "id1"
@@ -34,7 +34,7 @@ symbol | 取引ペア
 period | チャートタイプ
 
 **購読成功時のレスポンス**
-```
+```json
 {
   "id": "id1",
   "status": "ok",
@@ -45,7 +45,7 @@ period | チャートタイプ
 
 **リクエスト送信**
 
-```
+```json
 {
   "req": "market.$symbol.kline.$period",
   "id": "生成ID",
@@ -56,7 +56,7 @@ period | チャートタイプ
 
 **受信データ**
 
-```
+```json
 {
   "ch": "market.ethbtc.kline.1min",
   "ts": 1489474082831,
@@ -83,7 +83,7 @@ market.$symbol.depth.$type
 
 **購読**
 
-```
+```sh
 {
   "sub": "market.ethbtc.depth.step0",
   "id": "id1"
@@ -99,7 +99,7 @@ type | グルーピングレベル[step0〜step5]
 
 **リクエスト送信**
 
-```
+```json
 {
   "req": "market.btcjpy.depth.step0",
   "id": "id10"
@@ -108,7 +108,7 @@ type | グルーピングレベル[step0〜step5]
 
 **受信データ**
 
-```
+```json
 {
   "ch": "market.ethbtc.depth.step0",
   "ts": 1489474082831,
@@ -136,7 +136,7 @@ market.$symbol.bbo
 
 **購読**
 
-```
+```sh
 {
   "sub": "market.btcjpy.bbo",
   "id": "id1"
@@ -145,7 +145,7 @@ market.$symbol.bbo
 
 **購読成功のレスポンス**
 
-```
+```json
 {
   "id": "id1",
   "status": "ok",
@@ -156,7 +156,7 @@ market.$symbol.bbo
 
 **受信データ**
 
-```
+```jsom
 {
     "ch":"market.btcjpy.bbo",
     "ts":1630994555540,
@@ -188,13 +188,13 @@ symbol | 取引ペア
 
 **トピック**
 
-```
+```txt
 market.$symbol.trade.detail
 ```
 
 **購読**
 
-```
+```sh
 {
   "sub": "market.btcjpy.trade.detail",
   "id": "id1"
@@ -203,7 +203,7 @@ market.$symbol.trade.detail
 
 **購読成功のレスポンス**
 
-```
+```json
 {
   "id": "id1",
   "status": "ok",
@@ -214,7 +214,7 @@ market.$symbol.trade.detail
 
 **リクエスト送信**
 
-```
+```json
 {
   "req": "market.btcjpy.trade.detail",
   "id": "id11"
@@ -223,7 +223,7 @@ market.$symbol.trade.detail
 
 **受信データ**
 
-```
+```json
 {
     "ch":"market.btcjpy.trade.detail",
     "ts":1630994963175,
@@ -261,13 +261,13 @@ direction | 取引の方向[buy/sell]
 
 **トピック**
 
-```
+```txt
 market.$symbol.detail
 ```
 
 **リクエスト送信**
 
-```
+```sh
 {
   "req": "market.btcjpy.detail",
   "id": "id12"
@@ -275,7 +275,7 @@ market.$symbol.detail
 ```
 **データ受信**
 
-```
+```json
 {
   "rep": "market.btcjpy.detail",
   "status": "ok",
@@ -313,7 +313,7 @@ vol | 直近24時間の取引金額
 APIキーの署名により口座の取引情報、資産情報などのデータが取得できます。
 
 **エントリポイント**
-```
+```txt
 wss://api-cloud.bittrade.co.jp/ws/v2
 ```
 
@@ -345,7 +345,7 @@ signatureVersion | HmacSHA256 | 暗号化メゾット
 ※JSONのURLのエンコーディングが不要
 
 **署名用リクエスト**
-```
+```sh
 {
     "action": "req", 
     "ch": "auth",
@@ -361,7 +361,7 @@ signatureVersion | HmacSHA256 | 暗号化メゾット
 ```
 
 **レスポンス**
-```
+```json
 {
     "action": "req",
     "code": 200,
@@ -371,8 +371,10 @@ signatureVersion | HmacSHA256 | 暗号化メゾット
 ```
 
 **署名のサンプルコード**
+
 authの結果をシリアライズしてサーバーに送る
-```
+
+```sh
 func hmac256(base string, key string) string {
   h := hmac.New(sha256.New, []byte(key))
     h.Write([]byte(base))
@@ -410,13 +412,13 @@ func createAuthJson(accessKey, secretKey string) authJson {
 -------------------------------------------
 
 **トピック**
-```
+```txt
 orders#${symbol}
 ```
 
 **購読**
 
-```
+```sh
 {
     "action": "sub",
     "ch": "orders#btcjpy"
@@ -431,7 +433,7 @@ symbol | 取引ペア
 
 **購読成功のレスポンス**
 
-```
+```json
 {
     "action": "sub",
     "code": 200,
@@ -442,7 +444,7 @@ symbol | 取引ペア
 
 **受信データ**
 
-```
+```json
 {
     "action":"push",
     "ch":"orders#btcjpy",
@@ -465,7 +467,7 @@ symbol | 取引ペア
 
 **注文作成**
 
-```
+```json
 {
     "action":"push",
     "ch":"orders#btcjpy",
@@ -539,7 +541,7 @@ orderCreateTime | 注文作成時間
 
 **トピック**
 
-```
+```txt
 trade.clearing#${symbol}#${mode}
 ```
 
@@ -553,7 +555,7 @@ mode | プッシュモード[0-成約時のみ通知/1-成約時とキャンセ�
 
 **購読**
 
-```
+```sh
 {
     "action": "sub",
     "ch": "trade.clearing#btcjpy#1"
@@ -562,7 +564,7 @@ mode | プッシュモード[0-成約時のみ通知/1-成約時とキャンセ�
 
 **購読成功のレスポンス**
 
-```
+```json
 {
     "action": "sub",
     "code": 200,
@@ -573,7 +575,7 @@ mode | プッシュモード[0-成約時のみ通知/1-成約時とキャンセ�
 
 **受信データ**
 
-```
+```josn
 {
     "ch": "trade.clearing#trxjpy#1",
     "data": {
@@ -611,7 +613,7 @@ orderid | 注文ID
 tradePrice | 約定価格
 tradeVolume | 約定数量
 orderSide | 取引方向[buy/sell]
-orderType | 注文タイプ[buy-market, sell-market,buy-limit,sell-limit,buy-ioc,sell-ioc,buy-limit-maker,sell-limit-maker,buy-stop-limit,sell-stop-limit,buy-limit-fok, sell-limit-fok, buy-stop-limit-fok, sell-stop-limit-fok]
+orderType | 注文タイプ
 tradeid | 取引ID
 tradeTime | 取引時間
 tradeFee | 取引手数料
@@ -623,7 +625,7 @@ orderSize | 注文数量
 orderValue | 注文金額
 clientOrderid | 注文番号
 orderCreateTime | 注文時間
-orderStatus | 注文状況[filled, partial-filled]
+orderStatus | 注文状況[filled/partial-filled]
 
 **キャンセル時のデータ**
 
@@ -636,7 +638,7 @@ remainAmt | 未約定数量
 ----------------------------------------------------------
 
 **トピック**
-```
+```txt
 accounts.update#{mode}
 ```
 
@@ -649,7 +651,8 @@ mode | Description
 2 | 利用可能残高に変更があった際、同じデータが受信できます
 
 **購読**
-```
+
+```sh
 {
     "action": "sub",
     "ch": "accounts.update"
@@ -657,7 +660,8 @@ mode | Description
 ```
 
 **購読成功時のレスポンス**
-```
+
+```json
 {
     "action": "sub",
     "code": 200,
@@ -668,7 +672,7 @@ mode | Description
 
 **受信データ(accounts.update#0)**
 
-```
+```json
 {
     "action": "push",
     "ch": "accounts.update#0",
@@ -687,7 +691,7 @@ mode | Description
 
 **受信データ(accounts.update#1)**
 
-```
+```josn
 {
     "action": "push",
     "ch": "accounts.update#1",

@@ -8,7 +8,7 @@
       - [残高照会](#残高照会)
     - [アセット](#アセット)
       - [アセット一覧を返す](#アセット一覧を返す)
-      - [注文情報](#注文情報)
+　  - [注文情報](#注文情報)
       - [注文実行](#注文実行)
       - [未約定注文一覧](#未約定注文一覧)
       - [注文キャンセル](#注文キャンセル)
@@ -81,6 +81,106 @@ Signature: 4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=
 # 8. 署名後の文字列をURLに付加する
 https://api-cloud.bittrade.co.jp/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D
 ```
+
+
+
+
+### アカウント関連
+
+#### ユーザーアカウント
+
+```txt
+GET /v1/account/accounts
+```
+
+
+
+**Response Data**
+Parameter | Description
+------------ | ------------
+id | アカウントID
+type | アカウントタイプ
+state | アカウントステータス
+user-id | ユーザID
+
+
+
+**サンプルコード:**
+
+```sh
+
+curl -X GET "https://api-cloud.bittrade.co.jp/v1/account/accounts"
+```
+
+
+**レスポンスのフォーマット:**
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 100009,
+      "type": "spot",
+      "state": "working",
+      "user-id": 1000
+    }
+  ]
+
+```
+
+#### 残高照会
+
+```txt
+GET /v1/account/accounts/{account-id}/balance
+```
+
+**Response Data**
+Parameter | Description
+------------ | ------------
+id | アカウントID
+type | アカウントタイプ
+state | アカウントステータス
+list | 残高情報
+
+**List Data**
+Field | Description
+------------ | ------------
+balance | 残高
+currency | 暗号資産
+type | trade：取引残高/frozen：凍結残高
+
+
+**サンプルコード:**
+
+
+```sh
+curl -X GET "https://api-cloud.bittrade.co.jp/v1/account/accounts/{account-id}/balance"
+```
+
+
+**レスポンスのフォーマット:**
+
+```json
+
+{
+  "status": "ok",
+  "data": {
+    "id": 100009,
+    "type": "spot",
+    "state": "working",
+    "list": [
+      {
+        "currency": "jpy",
+        "type": "trade",
+        "balance": "500009195917.4362872650"
+      },
+```
+
+
+
+
+
 
 
 
@@ -170,8 +270,6 @@ curl -X GET \
 POST /v1/order/orders/place
 ```
 
-### 注文情報
-#### 注文実行
 
 
 **Query Parameters**

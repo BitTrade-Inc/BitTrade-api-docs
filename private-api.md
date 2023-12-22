@@ -565,8 +565,35 @@ curl -X GET \
 #### 入出金履歴を取得する
 
 ```txt
-
+GET /v1/query/deposit-withdraw?currency=xrp&type=deposit&from=5&size=12
 ```
+
+
+**Query Parameters**
+Parameter | Description
+------------ | ------------ 
+currency | 銘柄
+types | 入出金種別[deposit/withdraw]
+from | 照会ID
+size | 記録数
+
+
+**Response Data**
+Parameter | Description
+------------ | ------------ 
+id | 入出金ID
+type | 入出金種別[deposit/withdraw]
+currency | 銘柄
+tx-hash | トレードハッシュ
+amount | 数量
+address | ウォレットアドレス
+address-tag | アドレスラベル
+fee | 手数料
+state | ステータス
+created-at | 開始時間
+updated-at | 最後に更新した時間
+
+
 
 
 
@@ -575,16 +602,34 @@ curl -X GET \
 
 
 ```sh
-
+curl -X GET \
+     "https://api-cloud.bittrade.co.jp/v1/query/deposit-withdraw" 
 ```
 
 
 **レスポンスのフォーマット:**
 
 ```json
-
+{
+  "data":
+    [
+      {
+        "id": 1171,
+        "type": "deposit",
+        "currency": "btc",
+        "tx-hash": "ed03094b84eafbe4bc16e7ef766ee959885ee5bcb265872baaa9c64e1cf86c2b",
+        "amount": 7.457467,
+        "address": "rae93V8d2mdoUQHwBDBdM4NHCMehRJAsbm",
+        "address-tag": "100040",
+        "fee": 0,
+        "state": "safe",
+        "created-at": 1510912472199,
+        "updated-at": 1511145876575
+      }
+    ]
 }
 ```
+
 
 #### 出金申請
 

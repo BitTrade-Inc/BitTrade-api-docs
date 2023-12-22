@@ -4,18 +4,18 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
- - [システム情報関連](#%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E4%B8%80%E8%A6%A7)
-    - [取引ペア情報](#ticker)
-    - [対応取引通貨](#tickers)
-    - [システム時間を調べる](#tickersjpy)
+ - [システム情報関連](#システム情報関連)
+    - [取引ペア情報](#取引ペア情報)
+    - [対応取引通貨](#対応取引通貨)
+    - [システム時間を調べる](#システム時間を調べる)
     
-  - [マーケット関連](#%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E4%B8%80%E8%A6%A7)
-    - [ローソク足](#ticker)
-    - [ティッカー](#tickers)
-    - [全取引ペアの相場情報](#tickersjpy)
-    - [板情報](#depth)
-    - [最新の取引データ](#transactions)
-    - [取引履歴の取得](#candlestick)
+  - [マーケット関連](#マーケット関連)
+    - [ローソク足](#ローソク足)
+    - [ティッカー](#ティッカー)
+    - [全取引ペアの相場情報](#全取引ペアの相場情報)
+    - [板情報](#板情報)
+    - [最新の取引データ](#最新の取引データ)
+    - [取引履歴の取得](#取引履歴の取得)
  
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

@@ -156,7 +156,7 @@ market.$symbol.bbo
 
 **受信データ**
 
-```jsom
+```json
 {
     "ch":"market.btcjpy.bbo",
     "ts":1630994555540,

@@ -5,7 +5,7 @@
   - [署名処理](#署名処理)
     - [アセット](#アセット)
       - [アセット一覧を返す](#アセット一覧を返す)
-    - [注文情報](#注文情報)
+　- [注文情報](#注文情報)
       - [注文実行](#注文実行)
       - [未約定注文一覧](#未約定注文一覧)
       - [注文キャンセル](#注文キャンセル)
@@ -97,6 +97,7 @@ Parameter | Description
 status | リクエスト処理結果[ok/error]
 data | 取引ペアの情報
 
+
 Field | Description
 ------------ | ------------
 base-currency | ベース通貨
@@ -163,6 +164,10 @@ curl -X GET \
 ```txt
 POST /v1/order/orders/place
 ```
+
+### 注文情報
+#### 注文実行
+
 
 **Query Parameters**
 Parameter | Description

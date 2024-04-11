@@ -1,4 +1,4 @@
-BitTrade取り扱い通貨(2023/12/22日更新)
+BitTrade取り扱い通貨(2024/4/11日更新)
 ------------------------------------------------------
 Symbol | Coin name
 ------------ | ------------
@@ -21,14 +21,13 @@ ht | huobi token
 ada | cardano
 etc | ethereum classic
 dot | polkadot
-enj | enjin coin
+sxp | solar
 iost | iost
 xym | symbol
 bch | bitcoin cash
 trx | tron
 xtz | tezos
 qtum | qtum
-omg | omg network
 boba | boba
 bat | basic attention token
 xlm | stellar lumens
